@@ -3,10 +3,12 @@ import { Drawer, Menu, Layout } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { UserOutlined, SoundOutlined, ForkOutlined, FileSearchOutlined, DollarOutlined, HomeOutlined } from '@ant-design/icons';
 import Landing from './landing';
-
+import New from './new';
+import OnGoing from './ongoing';
 import { GithubOutlined } from '@ant-design/icons';
 import Logo from './logo.png';
 import './home.scss';
+
 const { Header, Content } = Layout;
 
 const AppMenuMapper = [
@@ -60,7 +62,7 @@ class Home extends React.Component {
         if (key == '0') this.setState({ positionofpage: '' });
     }
     openpage = () => {
-        this.setState({ selectedMenuItem: '1', positionofpage: "Welcome", drawerVisible: false });
+        this.setState({ selectedMenuItem: '1', positionofpage: "Orders", drawerVisible: false });
         console.log(this.props.data);
 
 
@@ -109,8 +111,8 @@ class Home extends React.Component {
                     </Menu>
                 </Drawer>
                 {this.state.selectedMenuItem == '0' ? <Landing open={this.openpage} /> :
-                    this.state.selectedMenuItem == '1' ? <Landing open={this.openpage} /> :
-                        this.state.selectedMenuItem == '2' ? <Landing open={this.openpage} /> :
+                    this.state.selectedMenuItem == '1' ? <New /> :
+                        this.state.selectedMenuItem == '2' ? <OnGoing /> :
 
 
                             <div></div>}

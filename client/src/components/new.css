@@ -1,0 +1,28 @@
+.lCol{
+    margin-top: 2%;
+    margin-left: 2%;
+    border-right-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+.listHeader {
+    height: 10%;
+    color: #eee;
+    font-family: "Raleway", sans-serif;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px !important;
+    margin-bottom: 4%;
+}
+.page{
+    margin: 4%;
+}
+.card {
+    margin : 5%;
+}
+.button{
+    margin-top : 8%;
+    margin-left: 0;
+}
