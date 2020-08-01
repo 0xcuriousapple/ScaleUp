@@ -40,26 +40,26 @@ class App extends Component {
       );
       console.log(instance)
 
-      // Contract.methods.getAllMaterials().call({ from: accounts[0], gas: 3000000 })
-      //       .then((result) => {
-      //           if(result.length==0)
-      //           {
-      //               Contract.methods.addMaterial("Material 1").send({ from: accounts[0], gas: 3000000 })
-      //                 Contract.methods.addMaterial("Material 2").send({ from: accounts[0], gas: 3000000 })
-      //                   Contract.methods.addMaterial("Material 3").send({ from: accounts[0], gas: 3000000 })
-      //                    Contract.methods.addMaterial("Material 4").send({ from: accounts[0], gas: 3000000 })
+      Contract.methods.getAllMaterials().call({ from: accounts[0], gas: 3000000 })
+            .then((result) => {
+                if(result.length==0)
+                {
+                    Contract.methods.addMaterial("Material 1").send({ from: accounts[0], gas: 3000000 })
+                      Contract.methods.addMaterial("Material 2").send({ from: accounts[0], gas: 3000000 })
+                        Contract.methods.addMaterial("Material 3").send({ from: accounts[0], gas: 3000000 })
+                         Contract.methods.addMaterial("Material 4").send({ from: accounts[0], gas: 3000000 })
 
-      //               Contract.methods.addOption("Material 1", "M1- Option1", "Supreme", 100, 50).send({ from: accounts[0], gas: 3000000 });
-      //               Contract.methods.addOption("Material 1", "M1- Option2", "Pro", 200, 30).send({ from: accounts[0], gas: 3000000 });
-      //               Contract.methods.addOption("Material 1", "M1- Option3", "Mid", 100, 10).send({ from: accounts[0], gas: 3000000 });
-      //               Contract.methods.addOption("Material 1", "M1- Option4", "Eco", 150, 5).send({ from: accounts[0], gas: 3000000 });
+                    Contract.methods.addOption("Material 1", "M1- Option1", "Supreme", 100, 50).send({ from: accounts[0], gas: 3000000 });
+                    Contract.methods.addOption("Material 1", "M1- Option2", "Pro", 200, 30).send({ from: accounts[0], gas: 3000000 });
+                    Contract.methods.addOption("Material 1", "M1- Option3", "Mid", 100, 10).send({ from: accounts[0], gas: 3000000 });
+                    Contract.methods.addOption("Material 1", "M1- Option4", "Eco", 150, 5).send({ from: accounts[0], gas: 3000000 });
                     
-      //               Contract.methods.addOption("Material 2", "M2- Option1", "Supreme", 100, 40).send({ from: accounts[0], gas: 3000000 });
-      //               Contract.methods.addOption("Material 2", "M2- Option2", "Pro", 200, 35).send({ from: accounts[0], gas: 3000000 });
-      //               Contract.methods.addOption("Material 2", "M2- Option3", "Mid", 100, 20).send({ from: accounts[0], gas: 3000000 });
-      //               Contract.methods.addOption("Material 2", "M2- Option4", "Eco", 150, 10).send({ from: accounts[0], gas: 3000000 });
-      //               }
-      //          })
+                    Contract.methods.addOption("Material 2", "M2- Option1", "Supreme", 100, 40).send({ from: accounts[0], gas: 3000000 });
+                    Contract.methods.addOption("Material 2", "M2- Option2", "Pro", 200, 35).send({ from: accounts[0], gas: 3000000 });
+                    Contract.methods.addOption("Material 2", "M2- Option3", "Mid", 100, 20).send({ from: accounts[0], gas: 3000000 });
+                    Contract.methods.addOption("Material 2", "M2- Option4", "Eco", 150, 10).send({ from: accounts[0], gas: 3000000 });
+                    }
+               })
                
       
       

@@ -40,6 +40,8 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
+        const { contract, accounts } = this.props.data;
+       
         // this.setState({ accounts: this.props.data.accounts });
         // window.ethereum.on('accountsChanged', (acc) => {
         //     this.setState({ accounts: acc })
@@ -111,8 +113,8 @@ class Home extends React.Component {
                     </Menu>
                 </Drawer>
                 {this.state.selectedMenuItem == '0' ? <Landing open={this.openpage} /> :
-                    this.state.selectedMenuItem == '1' ? <New /> :
-                        this.state.selectedMenuItem == '2' ? <OnGoing /> :
+                    this.state.selectedMenuItem == '1' ? <New data={this.props.data}/> :
+                        this.state.selectedMenuItem == '2' ? <OnGoing data={this.props.data}/> :
 
 
                             <div></div>}

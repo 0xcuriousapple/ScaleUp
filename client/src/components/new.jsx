@@ -23,12 +23,6 @@ import PlaceOrder from './placeorder'
 const { Paragraph } = Typography;
 const { Title, Text } = Typography;
 
-const data = [
-    {
-        key: '1',
-        FileName: 'Mike',
-    },
-];
 
 function ListItemLink(props) {
     return <ListItem button component="a" {...props} />;
@@ -38,16 +32,47 @@ class New extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: ["hello", "world"]
+            materiallist: [],
+            optionlist:["Select Material to see options available for that material"],
+            optionrawdata : [],
+            id : " ",
+            quality : " ",
+            quantity : " ",
+            unitcost :" ",
         }
     }
     MaterialClicked = (m) => {
-        console.log(m);
+        const { contract, accounts } = this.props.data;
+        contract.methods.getOptionsOfMaterial(m).call({ from: accounts[0], gas: 3000000 })
+        .then((result) => {
+
+            this.setState({optionrawdata : result})
+
+            var tlist = []
+            for(var i=0;i< result.length; i++)
+            {
+              tlist.push(result[i].name);
+            }
+            this.setState({ optionlist: tlist });
+        })
+    }
+
+    OptionClicked = (m) => {
+      
+        this.setState({
+            id : "1",
+            quality : "Supreme",
+            quantity : 10,
+            unitcost :1000,
+        })
     }
     componentDidMount = async () => {
-
-
-
+        const { contract, accounts } = this.props.data;
+        contract.methods.getAllMaterials().call({ from: accounts[0], gas: 3000000 })
+        .then((result) => {
+            
+            this.setState({ materiallist: result });
+        })
 
 
 
@@ -74,7 +99,7 @@ class New extends React.Component {
                         <Text className="listHeader">Materials</Text>
                         <Divider />
                         <List component="nav" aria-label="main mailbox folders">
-                            {this.state.list.map(item => (
+                            {this.state.materiallist.map(item => (
                                 <ListItem button onClick={() => { this.MaterialClicked(item) }}>
 
                                     <ListItemText primary={item} />
@@ -89,8 +114,8 @@ class New extends React.Component {
                         <Text className="listHeader">Options</Text>
                         <Divider />
                         <List component="nav" aria-label="main mailbox folders">
-                            {this.state.list.map(item => (
-                                <ListItem button>
+                            {this.state.optionlist.map(item => (
+                                  <ListItem button onClick={() => { this.OptionClicked(item) }}>
 
                                     <ListItemText primary={item} />
                                 </ListItem>
@@ -103,9 +128,10 @@ class New extends React.Component {
 
                     <Col span={5} className="card">
                         <Card style={{ width: 300 }}>
-                            <p>Card content</p>
-                            <p>Card content</p>
-                            <p>Card content</p>
+                            <p>ID : {this.state.id}</p>
+                            <p>Quality: {this.state.quality}</p>
+                            <p>Quantity Required: {this.state.quantity}</p>
+                            <p>UnitCost: {this.state.unitcost}</p>
                         </Card>
 
                     </Col>
