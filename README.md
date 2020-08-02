@@ -1,4 +1,14 @@
-# ScaleUp
+<h1 align="center"> ScaleUp</h1>
+
+<p align="center">
+  <img width="100" height="100" src="https://i.ibb.co/pr5zWp9/logo.png"> 
+</p>
+
+## Links
+
+- [Presentation](https://docs.google.com/presentation/d/1xfOQb3UauP3V1YAeL-oNsCsP-IMP_XBKTrAVeD4URYU/edit?usp=sharing)
+- [Live on : https://decentcloud.herokuapp.com/](https://scaleupindia.herokuapp.com/)
+- Deployed on Matic Mumbai Testnet
 ## Problem
 ### The first step in making India "ATMANIRBHAR" is empowering Medium and small size businesses (MSME).  [(Source](https://www.india.gov.in/spotlight/building-atmanirbhar-bharat-overcoming-covid-19)) 
 If we empower MSME, we will not only make India Self Reliant but will also have  diversefied employement in rural areas, which will help in distributing wealth equally.
