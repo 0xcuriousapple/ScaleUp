@@ -4,7 +4,7 @@ import { MenuOutlined } from '@ant-design/icons';
 import { UserOutlined, SoundOutlined, ForkOutlined, FileSearchOutlined, DollarOutlined, HomeOutlined } from '@ant-design/icons';
 import Landing from './landing';
 import New from './new';
-import OnGoing from './ongoing';
+import Completed from './completed';
 import { GithubOutlined } from '@ant-design/icons';
 import Logo from './logo.png';
 import './home.scss';
@@ -14,8 +14,8 @@ const { Header, Content } = Layout;
 const AppMenuMapper = [
     { key: '0', value: 'Home', icon: <HomeOutlined /> },
     { key: '1', value: 'New', icon: <SoundOutlined /> },
-    { key: '2', value: 'On-Going', icon: <ForkOutlined /> },
-    { key: '3', value: 'Completed', icon: <ForkOutlined /> },
+    { key: '2', value: 'Batch', icon: <ForkOutlined /> },
+
 
 ]
 
@@ -114,7 +114,7 @@ class Home extends React.Component {
                 </Drawer>
                 {this.state.selectedMenuItem == '0' ? <Landing open={this.openpage} /> :
                     this.state.selectedMenuItem == '1' ? <New data={this.props.data}/> :
-                        this.state.selectedMenuItem == '2' ? <OnGoing data={this.props.data}/> :
+                        this.state.selectedMenuItem == '2' ? <Completed data={this.props.data}/> :
 
 
                             <div></div>}

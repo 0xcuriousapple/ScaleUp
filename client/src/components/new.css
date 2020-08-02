@@ -23,6 +23,37 @@
     margin : 5%;
 }
 .button{
-    margin-top : 8%;
+    margin-top : 10%;
     margin-left: 0;
 }
+
+.realButton{
+    margin-top : 7%;
+}
+
+.cardel{
+    height: 10%;
+    font-family: "Raleway", sans-serif;
+    font-size: 17px;
+    font-weight : 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px !important;
+    margin-bottom: 4%;
+}
+
+.cardheader {
+    
+        height: 10%;
+        font-family: "Raleway", sans-serif;
+        font-size: 17px;
+        font-weight : 700;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 6px !important;
+        margin-bottom: 4%;
+    
+}
+

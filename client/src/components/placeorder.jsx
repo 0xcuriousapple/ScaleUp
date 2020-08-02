@@ -1,6 +1,11 @@
 import { Input, Tooltip } from 'antd';
 import { Modal, Button } from 'antd';
 import React from 'react';
+import {  Space } from 'antd';
+import { Typography } from 'antd';
+import { message } from 'antd';
+const { Title, Text } = Typography;
+
 function formatNumber(value) {
     value += '';
     const list = value.split('.');
@@ -57,7 +62,7 @@ class NumericInput extends React.Component {
                     {...this.props}
                     onChange={this.onChange}
                     onBlur={this.onBlur}
-                    placeholder="Input a number"
+                    placeholder="Enter Quantity"
                     maxLength={25}
                 />
             </Tooltip>
@@ -70,58 +75,69 @@ export default class NumericInputDemo extends React.Component {
         super(props);
         this.state = {
             value: '',
-            ModalText: 'Content of the modal',
-            visible: false,
-            confirmLoading: false,
+            max:0,
+            units: "",
+            cost : "",
+            loadings :false,
         };
     }
 
+    componentDidMount = async () => {
+        const { contract, accounts } = this.props.contractdata;
+       
+
+       
+    }
+   
+    componentDidUpdate(prevProps, prevState) {
+        // check whether client has changed
+        if (prevProps.data.quantity !== this.props.data.quantity) {
+            this.setState({units : (this.props.data.quantity-this.props.data.currreq)});
+        }
+    }
     onChange = value => {
         this.setState({ value });
+        this.setState({ cost : (parseInt(this.props.data.unitcost)*parseInt(value))})
     };
 
-    showModal = () => {
-        this.setState({
-            visible: true,
-        });
-    };
-
-    handleOk = () => {
-        this.setState({
-            ModalText: 'The modal will be closed after two seconds',
-            confirmLoading: true,
-        });
-        setTimeout(() => {
-            this.setState({
-                visible: false,
-                confirmLoading: false,
-            });
-        }, 2000);
-    };
-
-    handleCancel = () => {
-        console.log('Clicked cancel button');
-        this.setState({
-            visible: false,
-        });
-    };
+    submit = () =>{
+        if(this.state.cost==""){
+            message.error("Please select Material and Product first");
+            this.setState({value : ''});
+        }
+        else
+        {
+        this.setState({loadings : true })
+        const { contract, accounts } = this.props.contractdata;
+        contract.methods.placeOrder(this.props.data.material, this.props.data.id, this.state.value).send({ from: accounts[0], gas: 3000000 })
+        .then((receipt) => {
+            message.success('Order Placed Sucessfully');
+            console.log(receipt)
+            this.setState({ loadings: false });
+            this.props.call(this.props.data.id);
+        })
+        .catch((err) => {
+            message.error('Sorry your order was not successful Please try again');
+            this.setState({ loadings: false });
+        })
+      }
+    }
+   
 
     render() {
         const { visible, confirmLoading, ModalText } = this.state;
         return (
             <>
-                <Button type="primary" onClick={this.showModal}>
-                    Place Order
-                </Button>
-                <Modal
-                    title="Title"
-                    visible={visible}
-                    onOk={this.handleOk}
-                    confirmLoading={confirmLoading}
-                    onCancel={this.handleCancel}
-                >
-                    <p> <NumericInput style={{ width: 120 }} value={this.state.value} onChange={this.onChange} /></p>
-                </Modal>
+              <Space direction="vertical">
+        <Text type="secondary">Units required to complete batch : {this.state.units}</Text>
+                        <Text type="secondary" >Cost: {this.state.cost}</Text>
+                         <div> <NumericInput style={{ width: 150 }} value={this.state.value} onChange={this.onChange} className="numinput"/></div>
+                           <Button type="primary" onClick={this.submit} className="realButton" loading={this.state.loadings}>
+                              Place Order
+                           </Button>
+             </Space>
+                    
+               
             </>
 
         );
