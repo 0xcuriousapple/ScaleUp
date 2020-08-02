@@ -4,6 +4,9 @@
   <img width="100" height="100" src="https://i.ibb.co/pr5zWp9/logo.png"> 
 </p>
 
+## About
+### Product Built for Hack the Hourglass, organised by IEEE MAIT
+### Theme of the Hackathon : AtmaNirbhar Bharat
 ## Links
 
 - [Presentation](https://docs.google.com/presentation/d/1xfOQb3UauP3V1YAeL-oNsCsP-IMP_XBKTrAVeD4URYU/edit?usp=sharing)
