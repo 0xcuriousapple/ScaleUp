@@ -7,7 +7,7 @@
 ## Links
 
 - [Presentation](https://docs.google.com/presentation/d/1xfOQb3UauP3V1YAeL-oNsCsP-IMP_XBKTrAVeD4URYU/edit?usp=sharing)
-- [Live on : https://decentcloud.herokuapp.com/](https://scaleupindia.herokuapp.com/)
+- [Live on : https://scaleupindia.herokuapp.com/](https://scaleupindia.herokuapp.com/)
 - Deployed on Matic Mumbai Testnet
 ## Problem
 ### The first step in making India "ATMANIRBHAR" is empowering Medium and small size businesses (MSME).  [(Source](https://www.india.gov.in/spotlight/building-atmanirbhar-bharat-overcoming-covid-19)) 
