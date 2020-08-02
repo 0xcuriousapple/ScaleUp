@@ -8366,10 +8366,16 @@
       "links": {},
       "address": "0x6A1c6bd9aB7F0e794ad42F12C4cf46DdD8c02353",
       "transactionHash": "0x680d2d17b5accd24187b78014abc8a6ececad87b2060e292d6f89ee113dc3de1"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0xe644bb788d9e525a5f4C8AA637cD21DD22955f0A",
+      "transactionHash": "0x69e2a2285f635816f319cec4b1cae81859904cb47ca80de108de2cbcfb2bba97"
     }
   },
   "schemaVersion": "3.0.22",
-  "updatedAt": "2020-08-02T03:25:55.803Z",
+  "updatedAt": "2020-08-02T04:33:02.947Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Abhishek Vispute",

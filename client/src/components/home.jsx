@@ -20,8 +20,8 @@ const AppMenuMapper = [
 ]
 
 const LandingMenuMapper = [
-    { key: '7', value: 'Docs', link: 'https://docs.google.com/presentation/d/1VjFbRpdo2TxCSc-uY6Fq671_KRXBkoPpbQQf0PSMr9k/edit?usp=sharing' },
-    { key: '8', value: 'View on Github', link: 'https://github.com/abhishekvispute/decentralized-Cloud' },
+    { key: '7', value: 'Docs', link: 'https://docs.google.com/presentation/d/1xfOQb3UauP3V1YAeL-oNsCsP-IMP_XBKTrAVeD4URYU/edit?usp=sharing' },
+    { key: '8', value: 'View on Github', link: 'https://github.com/abhishekvispute/scaleup' },
 ]
 let labels = [
 
@@ -41,7 +41,7 @@ class Home extends React.Component {
 
     componentDidMount() {
         const { contract, accounts } = this.props.data;
-       
+
         // this.setState({ accounts: this.props.data.accounts });
         // window.ethereum.on('accountsChanged', (acc) => {
         //     this.setState({ accounts: acc })
@@ -113,8 +113,8 @@ class Home extends React.Component {
                     </Menu>
                 </Drawer>
                 {this.state.selectedMenuItem == '0' ? <Landing open={this.openpage} /> :
-                    this.state.selectedMenuItem == '1' ? <New data={this.props.data}/> :
-                        this.state.selectedMenuItem == '2' ? <Completed data={this.props.data}/> :
+                    this.state.selectedMenuItem == '1' ? <New data={this.props.data} /> :
+                        this.state.selectedMenuItem == '2' ? <Completed data={this.props.data} /> :
 
 
                             <div></div>}

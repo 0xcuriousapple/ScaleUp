@@ -24,9 +24,9 @@ class Landing extends React.Component {
                         <img src={Logo} style={{ height: '190px', width: 'auto' }} />
                         <div className="hero-title">Scale Up</div>
                         <div className="hero-details">
-                            Lets Scale Medium and Small Bussiness, and..<br />
+                            Scaling Businesses By Colloboration<br />
                             <div className="tagline">
-                                Make India AtmaNirbhar
+                                Making India AtmaNirbhar
 							</div>
                         </div><br />
 
