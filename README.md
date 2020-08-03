@@ -5,7 +5,7 @@
 </p>
 
 ## About
-#### Product Built for Hack the Hourglass, organised by IEEE MAIT
+#### Product Built for Hack the Hourglass, organised by IEEE MAIT (24-Hours Hackathon)
 #### Theme of the Hackathon : ATMANIRBHAR BHARAT
 ## Links
 - [Demo, Problem, Solution, Approach](https://www.youtube.com/watch?v=lpkM4-I6p7Y&feature=emb_title)
@@ -16,8 +16,8 @@
 ### The first step in making India "ATMANIRBHAR" is empowering Medium and small size businesses (MSME).  [(Source](https://www.india.gov.in/spotlight/building-atmanirbhar-bharat-overcoming-covid-19)) 
 If we empower MSME, we will not only make India Self Reliant but will also have  diversefied employement in rural areas, which will help in distributing wealth equally.
 As of now Manufacturing segment within the MSME contributes to as low as 7.09% of GDP.
-The reason behind these lies in the **Economics of Scale.**
-Economics of scale means producing products and acquiring raw materials at a huge scale thereby saving the cost of production and increasing profit.
+The reason behind these lies in the **Economies of Scale.**
+Economies of scale means producing products and acquiring raw materials at a huge scale thereby saving the cost of production and increasing profit.
 That’s the reason, we see Chinese products or Products produced by larrge factories cheaper.
 Increasing tariffs or abandoning them is not a long term solution
 We have to fight with them, one and one by having competative prizes.
